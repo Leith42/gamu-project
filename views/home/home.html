@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ pageTitle }}</title>
+    <link rel="icon" href="img/favicon.ico"/>
+    <link href="https://fonts.googleapis.com/css?family=Exo&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Nixie+One' rel='stylesheet'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/banner.css"/>
+</head>
+<body class="d-flex flex-column">
+<div id="banner-container">
+    <div id="logo" class="banner-blue">
+        <i>C</i><i>l</i><i>a</i><i>s</i><i>h</i>
+        <i> </i>
+        <i>o</i><i>f</i>
+        <i> </i>
+        <i>W</i><i>o</i><i>m</i><i>a</i><i>n</i>
+    </div>
+</div>
+<div id="game-container"></div>
+<!-- Start scripts -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+<!--TODO CHANGE TO PROD-->
+<!--<script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>-->
+<!--<script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>-->
+<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="https://kit.fontawesome.com/3e7930d5c0.js" crossorigin="anonymous"></script>
+<script src="js/banner.js"></script>
+<script src="jsx/game.js" type="module"></script>
+<!--<script src="jsx/cursors.js" type="module"></script>-->
+<!--<script src="jsx/lobby.js" type="module"></script>-->
+<!-- End scripts -->
+</body>
+</html>
