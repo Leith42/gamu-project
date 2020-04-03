@@ -17,7 +17,7 @@ app.io = io;
 
 // SOCKET SERVER
 io.on('connection', (socket) => {
-    console.log('❌ [' + socket.id + '] as disconnected');
+    console.log('❌ [' + socket.id + '] as connected');
 
     socket.on("updateCursorPos", (cursor) => {
         io.emit("updateCursorPos", cursor);
@@ -26,7 +26,7 @@ io.on('connection', (socket) => {
     socket.on('disconnect', () => {
         axios({
             method: 'post',
-            url: 'http://localhost:1337/game/disconnect',
+            url: 'http://localhost:1337/api/disconnect',
             data: {
                 socketId: socket.id,
             },
@@ -35,7 +35,7 @@ io.on('connection', (socket) => {
                 "Content-Type": "application/json"
             }
         }).then(response => {
-            console.log('❌ [' + socket.id + '] as disconnected');
+            console.log('❌  [' + socket.id + '] as disconnected');
         }).catch(error => {
             console.log(error);
         });

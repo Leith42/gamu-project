@@ -1,8 +1,7 @@
-let letters = $('i'),
+var letters = $('i'),
     flickers = [5, 7, 9, 11, 13, 15, 17],
     flickingLetters = [2, 9],
     //which letters to flicker
-
 randomLetter = void 0,
     flickerNumber = void 0,
     counter = void 0;

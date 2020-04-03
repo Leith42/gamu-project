@@ -3,13 +3,46 @@ body {
     height: 100%;
     max-height: 100%;
     max-width: 100%;
+    overflow: hidden;
 }
 
 body {
     background-color: #92A8D1;
 }
 
+footer {
+    background-color: #343a40;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    overflow: hidden;
+    height: 30px;
+    justify-content: flex-end;
+}
+
+footer a {
+    color: whitesmoke;
+    text-decoration: none;
+    margin-right: 10px;
+    font-weight: bold;
+    font-family: 'press start 2p', cursive;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+footer a:hover {
+    text-decoration: none;
+    color: #02AEFF;
+}
+
+.footer-heart {
+    color: red;
+    font-size: 15px;
+}
+
 .player-cursor {
+    font-weight: bold;
     position: absolute;
 }
 
@@ -39,10 +72,6 @@ body {
     background: black;
 }
 
-#lobby-list {
-    /*margin-right: 30px;*/
-}
-
 .row-icon {
     line-height: inherit !important;
 }
@@ -52,6 +81,8 @@ body {
     font-family: 'Exo', sans-serif;
     margin: 10px;
     font-size: 40px;
+    /*text-shadow: 0 0 1px #000;*/
+    font-weight: bold;
 }
 
 .lobby-player i {

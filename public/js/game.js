@@ -6,7 +6,7 @@ class Game extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            socket: io.connect("/", {reconnection: false}),
+            socket: io.connect("/"),
             nickname: "",
             players: [],
             submitted: false,

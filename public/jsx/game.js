@@ -21,7 +21,7 @@ var Game = function (_React$Component) {
         var _this = _possibleConstructorReturn(this, (Game.__proto__ || Object.getPrototypeOf(Game)).call(this, props));
 
         _this.state = {
-            socket: io.connect("/", { reconnection: false }),
+            socket: io.connect("/"),
             nickname: "",
             players: [],
             submitted: false,
