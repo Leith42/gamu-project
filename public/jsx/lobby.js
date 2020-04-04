@@ -55,17 +55,16 @@ var Lobby = function (_React$Component) {
 			var _this3 = this;
 
 			this.state.socket.on("updateCursorPos", function (cursor) {
-				// console.log(cursor);
-				// if (cursor.socketId !== this.state.socket.id) {
-				for (var i = 0; i < _this3.state.players.length; i++) {
-					if (_this3.state.players[i].socketId === cursor.socketId) {
-						_this3.state.players[i].cursor.posX = cursor.posX;
-						_this3.state.players[i].cursor.posY = cursor.posY;
-						_this3.forceUpdate();
-						return;
+				if (cursor.socketId !== _this3.state.socket.id) {
+					for (var i = 0; i < _this3.state.players.length; i++) {
+						if (_this3.state.players[i].socketId === cursor.socketId) {
+							_this3.state.players[i].cursor.posX = cursor.posX;
+							_this3.state.players[i].cursor.posY = cursor.posY;
+							_this3.forceUpdate();
+							return;
+						}
 					}
 				}
-				// }
 			});
 
 			document.body.addEventListener("mousemove", function (cursor) {
@@ -114,7 +113,7 @@ var Lobby = function (_React$Component) {
 					{
 						__source: {
 							fileName: _jsxFileName,
-							lineNumber: 82
+							lineNumber: 81
 						},
 						__self: this
 					},
@@ -122,7 +121,7 @@ var Lobby = function (_React$Component) {
 						"form",
 						{ onSubmit: this.handleFormSubmit, __source: {
 								fileName: _jsxFileName,
-								lineNumber: 83
+								lineNumber: 82
 							},
 							__self: this
 						},
@@ -135,13 +134,13 @@ var Lobby = function (_React$Component) {
 							maxLength: "20",
 							__source: {
 								fileName: _jsxFileName,
-								lineNumber: 84
+								lineNumber: 83
 							},
 							__self: this
 						}),
 						React.createElement("input", { className: "w-100 btn btn-dark rounded-0", type: "submit", value: "Join", __source: {
 								fileName: _jsxFileName,
-								lineNumber: 92
+								lineNumber: 91
 							},
 							__self: this
 						})
@@ -153,11 +152,13 @@ var Lobby = function (_React$Component) {
 	}, {
 		key: "setCursor",
 		value: function setCursor() {
-			if (this.state.connected) {
-				$('body').awesomeCursor('hand-point-up', {
-					color: this.state.color,
-					size: '32px'
-				});
+			var body = $('body');
+
+			if (this.state.color) {
+				body.removeClass("cursor-hand");
+				body.addClass("cursor-hand-" + this.state.color);
+			} else {
+				body.addClass("cursor-hand");
 			}
 		}
 	}, {
@@ -183,16 +184,16 @@ var Lobby = function (_React$Component) {
 						color = player.color;
 						items.push(React.createElement(
 							"span",
-							{ key: index, className: "lobby-player", style: { color: color }, __source: {
+							{ key: index, className: "lobby-player", __source: {
 									fileName: _jsxFileName,
-									lineNumber: 115
+									lineNumber: 116
 								},
 								__self: this
 							},
 							player.nickname,
-							React.createElement("i", { className: "fa fa-signal row-icon", "aria-hidden": "true", __source: {
+							React.createElement("i", { className: "fa fa-tint row-icon", "aria-hidden": "true", style: { color: color }, __source: {
 									fileName: _jsxFileName,
-									lineNumber: 116
+									lineNumber: 117
 								},
 								__self: this
 							})
@@ -217,7 +218,7 @@ var Lobby = function (_React$Component) {
 					"div",
 					{ className: "d-flex flex-column", __source: {
 							fileName: _jsxFileName,
-							lineNumber: 120
+							lineNumber: 121
 						},
 						__self: this
 					},
@@ -225,7 +226,7 @@ var Lobby = function (_React$Component) {
 						"h5",
 						{ id: "lobby-header", className: "card-header", __source: {
 								fileName: _jsxFileName,
-								lineNumber: 121
+								lineNumber: 122
 							},
 							__self: this
 						},
@@ -237,7 +238,7 @@ var Lobby = function (_React$Component) {
 						"div",
 						{ id: "lobby-list", className: "d-flex flex-column", __source: {
 								fileName: _jsxFileName,
-								lineNumber: 122
+								lineNumber: 123
 							},
 							__self: this
 						},
@@ -250,6 +251,7 @@ var Lobby = function (_React$Component) {
 	}, {
 		key: "render",
 		value: function render() {
+
 			var form = this.getForm();
 			var lobbyList = this.getLobbyList();
 			this.setCursor();
@@ -258,7 +260,7 @@ var Lobby = function (_React$Component) {
 				"div",
 				{ key: "lobby-container", className: "card border-dark mb-3 rounded-lg border-0 radius-25", __source: {
 						fileName: _jsxFileName,
-						lineNumber: 136
+						lineNumber: 138
 					},
 					__self: this
 				},
@@ -266,7 +268,7 @@ var Lobby = function (_React$Component) {
 					"div",
 					{ className: "card-body d-flex", __source: {
 							fileName: _jsxFileName,
-							lineNumber: 137
+							lineNumber: 139
 						},
 						__self: this
 					},
@@ -275,13 +277,13 @@ var Lobby = function (_React$Component) {
 						"div",
 						{ id: "lobby-image", __source: {
 								fileName: _jsxFileName,
-								lineNumber: 139
+								lineNumber: 141
 							},
 							__self: this
 						},
 						React.createElement("img", { className: "card-img-top", src: "img/girls-fighting.png", alt: "girls fighting", __source: {
 								fileName: _jsxFileName,
-								lineNumber: 140
+								lineNumber: 142
 							},
 							__self: this
 						})
@@ -290,7 +292,7 @@ var Lobby = function (_React$Component) {
 				form
 			), React.createElement(Cursors, { key: "cursors", nickname: this.state.nickname, players: this.state.players, __source: {
 					fileName: _jsxFileName,
-					lineNumber: 145
+					lineNumber: 147
 				},
 				__self: this
 			})];

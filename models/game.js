@@ -6,11 +6,11 @@ class Game {
 		this.players = []; // Array of objects, each object represent a player.
 		this.numberOfPlayers = 0; // Number of players currently connected to the game.
 		this.colors = [
-			{hex: "#0f3fff", available: true}, // Blue
-			{hex: "#de040a", available: true}, // Red
-			{hex: "#228b22", available: true}, // Green
-			{hex: "#ff6600", available: true}, // Orange
-			{hex: "#fc85bd", available: true}, // Pink
+			{color: "blue", available: true},
+			{color: "red", available: true},
+			{color: "green", available: true},
+			{color: "orange", available: true},
+			{color: "pink", available: true},
 		]
 	}
 
@@ -27,13 +27,13 @@ class Game {
 	}
 
 	/*
-		Return an available hex color.
+		Return an available color.
 	 */
 	getAvailableColor() {
 		for (let i = 0; i < this.colors.length; i++) {
 			if (this.colors[i].available === true) {
 				this.colors[i].available = false;
-				return this.colors[i].hex;
+				return this.colors[i].color;
 			}
 		}
 		return null;
@@ -44,7 +44,7 @@ class Game {
 	 */
 	setColorAsAvailable(color) {
 		for (let i = 0; i < this.colors.length; i++) {
-			if (this.colors[i].hex === color) {
+			if (this.colors[i].color === color) {
 				this.colors[i].available = true;
 				return;
 			}

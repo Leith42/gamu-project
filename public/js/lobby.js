@@ -28,17 +28,16 @@ class Lobby extends React.Component {
 
 	setEventUpdateCursorPos() {
 		this.state.socket.on("updateCursorPos", cursor => {
-			// console.log(cursor);
-			// if (cursor.socketId !== this.state.socket.id) {
-			for (let i = 0; i < this.state.players.length; i++) {
-				if (this.state.players[i].socketId === cursor.socketId) {
-					this.state.players[i].cursor.posX = cursor.posX;
-					this.state.players[i].cursor.posY = cursor.posY;
-					this.forceUpdate();
-					return;
+			if (cursor.socketId !== this.state.socket.id) {
+				for (let i = 0; i < this.state.players.length; i++) {
+					if (this.state.players[i].socketId === cursor.socketId) {
+						this.state.players[i].cursor.posX = cursor.posX;
+						this.state.players[i].cursor.posY = cursor.posY;
+						this.forceUpdate();
+						return;
+					}
 				}
 			}
-			// }
 		});
 
 		document.body.addEventListener("mousemove", cursor => {
@@ -97,11 +96,13 @@ class Lobby extends React.Component {
 	}
 
 	setCursor() {
-		if (this.state.connected) {
-			$('body').awesomeCursor('hand-point-up', {
-				color: this.state.color,
-				size: '32px'
-			});
+		const body = $('body');
+
+		if (this.state.color) {
+			body.removeClass("cursor-hand");
+			body.addClass("cursor-hand-" + this.state.color)
+		} else {
+			body.addClass("cursor-hand")
 		}
 	}
 
@@ -112,8 +113,8 @@ class Lobby extends React.Component {
 
 			for (const [index, player] of this.state.players.entries()) {
 				color = player.color;
-				items.push(<span key={index} className="lobby-player" style={{color}}>
-                    {player.nickname}<i className="fa fa-signal row-icon" aria-hidden="true"/>
+				items.push(<span key={index} className="lobby-player">
+                    {player.nickname}<i className="fa fa-tint row-icon" aria-hidden="true" style={{color}}/>
                 </span>)
 			}
 
@@ -128,6 +129,7 @@ class Lobby extends React.Component {
 	}
 
 	render() {
+
 		const form = this.getForm();
 		const lobbyList = this.getLobbyList();
 		this.setCursor();

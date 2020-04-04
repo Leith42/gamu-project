@@ -1,4 +1,4 @@
-var _jsxFileName = 'public/js/cursors.js';
+var _jsxFileName = "public/js/cursors.js";
 
 var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
 
@@ -20,9 +20,9 @@ var Cursors = function (_React$Component) {
 	}
 
 	_createClass(Cursors, [{
-		key: 'getCursors',
+		key: "getCursors",
 		value: function getCursors(players) {
-			var items = [];
+			var cursors = [];
 			var left = void 0,
 			    top = void 0,
 			    color = void 0;
@@ -40,38 +40,38 @@ var Cursors = function (_React$Component) {
 					var index = _ref2[0];
 					var player = _ref2[1];
 
-					// if (player.nickname !== this.props.nickname) {
-					left = player.cursor.posX + 'px';
-					top = player.cursor.posY + 'px';
-					color = player.color;
+					if (player.nickname !== this.props.nickname) {
+						left = player.cursor.posX + "px";
+						top = player.cursor.posY + "px";
+						color = player.color;
 
-					items.push(React.createElement(
-						'span',
-						{ key: index, className: 'player-cursor', style: { left: left, top: top, color: color }, __source: {
-								fileName: _jsxFileName,
-								lineNumber: 13
-							},
-							__self: this
-						},
-						React.createElement('i', { className: 'far fa-hand-point-up fa-2x', __source: {
-								fileName: _jsxFileName,
-								lineNumber: 14
-							},
-							__self: this
-						}),
-						React.createElement(
-							'p',
-							{
-								__source: {
+						cursors.push(React.createElement(
+							"span",
+							{ key: index, className: "player-cursor", style: { left: left, top: top, color: color }, __source: {
 									fileName: _jsxFileName,
-									lineNumber: 15
+									lineNumber: 13
 								},
 								__self: this
 							},
-							player.nickname
-						)
-					));
-					// }
+							React.createElement("i", { className: "far fa-hand-point-up fa-2x", __source: {
+									fileName: _jsxFileName,
+									lineNumber: 14
+								},
+								__self: this
+							}),
+							React.createElement(
+								"p",
+								{
+									__source: {
+										fileName: _jsxFileName,
+										lineNumber: 15
+									},
+									__self: this
+								},
+								player.nickname
+							)
+						));
+					}
 				}
 			} catch (err) {
 				_didIteratorError = true;
@@ -88,15 +88,15 @@ var Cursors = function (_React$Component) {
 				}
 			}
 
-			return items;
+			return cursors;
 		}
 	}, {
-		key: 'render',
+		key: "render",
 		value: function render() {
 			var cursors = this.getCursors(this.props.players);
 
 			return React.createElement(
-				'div',
+				"div",
 				{ id: "cursors-container", __source: {
 						fileName: _jsxFileName,
 						lineNumber: 27
