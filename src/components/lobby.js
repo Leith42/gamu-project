@@ -181,7 +181,7 @@ class Lobby extends React.Component {
 	}
 
 	render() {
-		this.setCustomCursor();
+		// this.setCustomCursor();
 		return (
 			<>
 				<div key="lobby-container" className="card border-dark mb-3 rounded-lg border-0 radius-25">

@@ -114,10 +114,10 @@ class MapQuiz extends React.Component {
 
 			for (const [index, player] of roundSummary.playersWhoFailed.entries()) {
 				let color = player.color;
-				let countryCode = player.gameResponses[roundSummary.round - 1].toLowerCase();
+				let countryCode = player.gameResponses[roundSummary.round - 1];
 
 				if (countryCode !== null) {
-					let selectedCountry = $('#jqvmap1_' + countryCode);
+					let selectedCountry = $('#jqvmap1_' + countryCode.toLowerCase());
 					selectedCountry.attr("fill", color);
 				}
 
