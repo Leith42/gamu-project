@@ -61,7 +61,7 @@ class Game extends React.Component {
 
 	// Get header component.
 	getHeader() {
-		if (!this.state.gameInProgress) {
+		if (!this.state.gameInProgress || this.isGameOver()) {
 			return <Header key="header"/>
 		}
 	}
@@ -75,7 +75,7 @@ class Game extends React.Component {
 
 	// Get footer component.
 	getFooter() {
-		if (!this.state.gameInProgress) {
+		if (!this.state.gameInProgress || this.isGameOver()) {
 			return <Footer key="footer"/>
 		}
 	}

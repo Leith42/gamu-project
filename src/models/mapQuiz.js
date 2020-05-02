@@ -7,10 +7,10 @@ class MapQuiz {
 	constructor() {
 		this.players = {}; // Players in the game.
 		this.roundInProgress = false; // Check if a round is currently in progress.
-		this.maxRounds = 1; // Max rounds of the game.
-		this.currentRoundTimer = this.maxRoundTimer = 5; // Round timer in seconds.
-		this.roundPauseDuration = 5; // Pause duration in seconds between rounds.
-		this.summaryPauseDuration = 10; // Pause duration in seconds round summaries.
+		this.maxRounds = 10; // Max rounds of the game.
+		this.currentRoundTimer = this.maxRoundTimer = 15; // Round timer in seconds.
+		this.roundPauseDuration = 6; // Pause duration in seconds between rounds.
+		this.summaryPauseDuration = 6; // Pause duration in seconds round summaries.
 		this.currentRound = 1; // Current round, starting at 1.
 		this.timerObject = new Timer(() => this.timerTick(this.timerObject), 1000); // Timer object for rounds (see timer.js).
 		this.countries = []; // Countries retrieved from the database.
