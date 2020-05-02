@@ -1,0 +1,59 @@
+#logo {
+    width: 100%;
+    height: 10%;
+    align-self: center;
+    text-align: center;
+    font-family: 'Nixie One', cursive;
+    font-size: 60pt;
+    color: white;
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+
+/* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
+@media screen and (max-height: 1100px) {
+    #logo {
+        font-size: 40pt;
+    }
+}
+
+@media screen and (max-height: 850px) {
+    #logo {
+        font-size: 30pt;
+    }
+}
+
+@media screen and (max-height: 700px) {
+    #logo {
+        display: none;
+    }
+}
+
+i.off {
+    color: #2C2C2C;
+    text-shadow: 7px 7px 5px rgba(0, 0, 0, 0.5);
+}
+
+.banner-active {
+    font-weight: bold;
+    font-size: 20pt;
+}
+
+/*Colours*/
+.banner-white {
+    text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 15px #ffffff, 0 0 20px #ffffff, 0 0 25px #ffffff, 0 0 30px #ffffff, 0 0 35px #ffffff, 0 0 40px #ffffff;
+}
+
+.banner-blue {
+    text-shadow: 0 0 5px #02AEFF, 0 0 10px #02AEFF, 0 0 15px #02AEFF, 0 0 20px #02AEFF, 0 0 25px #02AEFF, 0 0 30px #02AEFF, 0 0 35px #02AEFF, 0 0 40px #02AEFF;
+}
+
+.banner-green {
+    text-shadow: 0 0 10px #02ff08, 0 0 15px #02ff08, 0 0 20px #02ff08, 0 0 25px #02ff08, 0 0 30px #02ff08, 0 0 35px #02ff08, 0 0 40px #02ff08, 0 0 45px #02ff08;
+}
+
+.banner-red {
+    text-shadow: 0 0 5px #ff0202, 0 0 10px #ff0202, 0 0 15px #ff0202, 0 0 20px #ff0202, 0 0 30px #ff0202, 0 0 35px #ff0202, 0 0 40px #ff0202, 0 0 45px #ff0202;
+}
