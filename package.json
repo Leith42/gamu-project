@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/Leith42/gamu-project#readme",
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "babel-cli": "^6.26.0",
     "babel-loader": "^8.2.2",
     "babel-preset-react-app": "^3.1.2",
